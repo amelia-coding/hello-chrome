@@ -1,8 +1,10 @@
 const path = require('path')
-const copyWebpackPlugin = require('copy-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-  filenameHashing: false,
+  productionSourceMap: false,
+  lintOnSave: false, //关闭eslint检查
   pages: {
     index: {
       // page 的入口
@@ -13,21 +15,12 @@ module.exports = {
       filename: 'index.html',
       // 当使用 title 选项时，
       // template 中的 title 标签需要是 <title><%= htmlWebpackPlugin.options.title %></title>
-      title: 'Hello 插件'
+      title: 'Hello 插件',
     },
   },
   configureWebpack: {
     plugins: [
-      new copyWebpackPlugin(
-        [
-          {
-            from: path.resolve(__dirname, './manifest.json')
-          },
-          {
-            from: path.resolve(__dirname, '/public/logo.png')
-          }
-        ]
-      )
+      // new CleanWebpackPlugin()
     ]
   }
 }
