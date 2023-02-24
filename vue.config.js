@@ -22,6 +22,9 @@ module.exports = {
         [
           {
             from: path.resolve(__dirname, './manifest.json')
+          },
+          {
+            from: path.resolve(__dirname, '/public/logo.png')
           }
         ]
       )
