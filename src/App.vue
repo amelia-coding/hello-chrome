@@ -4,7 +4,7 @@
     <div>获得标题：{{ title }}</div>
     <div>获得站点URL：{{ url }}</div>
     <el-input v-model="domain"></el-input>
-    <el-button @click="onDelete">删除1c1ookie</el-button>
+    <el-button @click="onDelete">删除cookie</el-button>
   </div>
 </template>
 
